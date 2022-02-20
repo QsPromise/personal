@@ -1,0 +1,299 @@
+<!--
+ * @author: QsPromise
+ * @create: 2022-02-20 13:17 PM
+ * @license: MIT
+ * @QsPromise: QsPromise
+ * @lastEditTime: 2022-02-20 15:52 PM
+ * @filePath: \personal\BingDundun\index.html
+ * @desc:抢不到冰墩墩就用代写一个
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BingDundun</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font: 15px 'Microsoft YaHei', Arial, Helvetica, sans-serif;
+        background: #d4ebf1;
+        color: #000;
+      }
+      .app {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .m_body {
+        width: 362px;
+        height: 410px;
+        border: #393939 8px solid;
+        margin: 50px auto;
+        border-radius: 88% 88% 62% 68% / 82% 82% 95% 84%;
+        background: #fff;
+      }
+      .ear {
+        position: absolute;
+        top: 0;
+      }
+      .ear::after,
+      .ear::before {
+        content: '';
+        background: #393939;
+        width: 81px;
+        height: 115px;
+        border-radius: 50%;
+        position: absolute;
+        top: 60px;
+        z-index: -1;
+      }
+      .ear::before {
+        transform: rotate(-10deg);
+      }
+      .ear::after {
+        left: 300px;
+        transform: rotate(10deg);
+      }
+      .faces {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding-top: 100%;
+        width: 100%;
+      }
+      .eye1,
+      .eye2 {
+        background: #393939;
+        width: 83px;
+        height: 115px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .eye1 {
+        transform: translate(-120%, -80%) rotate(45deg);
+      }
+      .eye2 {
+        transform: translate(30%, -80%) rotate(-45deg);
+      }
+      .eye1::before,
+      .eye2::before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        border: #fff 5px solid;
+        border-radius: 100%;
+        position: absolute;
+      }
+      .eye1::before {
+        right: 10px;
+        top: 22px;
+      }
+      .eye2::before {
+        left: 10px;
+        top: 22px;
+      }
+      .eye1::after,
+      .eye2::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: #9b9b9b;
+        border-radius: 100%;
+        position: absolute;
+      }
+      .eye1::after {
+        right: 27px;
+        top: 31px;
+      }
+      .eye2::after {
+        left: 41px;
+        top: 44px;
+      }
+      .face {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 48% 48% 44% 49%/ 53% 54% 45% 47%;
+      }
+      .c_blue {
+        border: #6bcdf3 5px solid;
+        width: 280px;
+        height: 224px;
+      }
+      .c_red {
+        border: #af2350 5px solid;
+        width: 287px;
+        height: 233px;
+      }
+      .c_purple {
+        border: #5d75b3 5px solid;
+        width: 295px;
+        height: 240px;
+      }
+      .c_yellow {
+        border: #ffc346 5px solid;
+        width: 305px;
+        height: 248px;
+      }
+      .c_green {
+        border: #7fcb58 5px solid;
+        width: 313px;
+        height: 256px;
+      }
+      .arm1,
+      .arm2 {
+        background: #333;
+        position: absolute;
+        z-index: -1;
+      }
+      .arm1 {
+        width: 75px;
+        height: 118px;
+        left: -15%;
+        top: 50%;
+        transform: rotate(45deg);
+        border-radius: 24% 69% 68% 76%/ 53% 95% 40% 52%;
+      }
+      .arm2 {
+        width: 75px;
+        height: 148px;
+        left: 100%;
+        top: 35%;
+        transform: rotate(37deg);
+        border-radius: 56% 62% 98% 6%/ 40% 46% 80% 58%;
+      }
+      .arm2:before {
+        content: '';
+        width: 16px;
+        height: 24px;
+        background: #bc242c;
+        position: absolute;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        transform: rotate(45deg);
+        left: 32px;
+        top: 20px;
+      }
+      .arm2:after {
+        content: '';
+        width: 16px;
+        height: 24px;
+        background: #bc242c;
+        position: absolute;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        transform: rotate(-45deg);
+        left: 26px;
+        top: 20px;
+      }
+      .arm_c {
+        content: '';
+        width: 16px;
+        height: 24px;
+        position: absolute;
+        left: 426px;
+        top: 20px;
+      }
+      .nose {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .nose::before,
+      .nose::after {
+        content: '';
+        position: absolute;
+        background-color: #333333;
+      }
+      .nose::before {
+        width: 28px;
+        height: 18px;
+        border-radius: 42px 42px 60px 61px/ 30px 30px 50px 46px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .nose::after {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: 68px;
+        height: 25px;
+        background-color: transparent;
+        border-radius: 48%;
+        border: #393939 7px solid;
+        border-top: none;
+        border-left: 0;
+        border-right: 0;
+      }
+      .leg1,
+      .leg2 {
+        background: #333;
+        position: absolute;
+        width: 83px;
+        height: 80px;
+        border-radius: 0 0 30px 30px;
+        z-index: -1;
+        bottom: 0;
+        left: 50%;
+      }
+      .leg1 {
+        transform: translate(-125%, 0);
+      }
+      .leg2 {
+        transform: translate(25%, 0);
+      }
+      .leg1:after,
+      .leg2:after {
+        content: '';
+        width: 43px;
+        height: 30px;
+        position: absolute;
+        background: #363636;
+        border-radius: 30px;
+      }
+      .leg1:after {
+        bottom: 0;
+        right: -3px;
+      }
+      .leg2:after {
+        bottom: 0;
+        left: -3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="m_body"></div>
+      <div class="ear"></div>
+      <div class="faces">
+        <div class="eye1"></div>
+        <div class="eye2"></div>
+        <div class="face c_blue"></div>
+        <div class="face c_red"></div>
+        <div class="face c_purple"></div>
+        <div class="face c_yellow"></div>
+        <div class="face c_green"></div>
+        <div class="nose"></div>
+        <div class="mouse"></div>
+      </div>
+      <div class="arm1"></div>
+      <div class="arm2"></div>
+      <div class="leg1"></div>
+      <div class="leg2"></div>
+    </div>
+  </body>
+</html>
